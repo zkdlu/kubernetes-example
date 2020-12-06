@@ -25,6 +25,16 @@
 - Pod의 IP는 유동적이기 때문에 Pod를 참조할 수 있는 IP를 정해두고 Pod의 IP가 변하면 자동으로 연동해줌
 - Service를 참조하면 Service가 관리하는 Pod에 연결 해준다.
 - Service는 고정적인 가상 IP를 가지고 있음.
-- Pod를 생성할 때 특정 라벨을 붙일 수 있고, Service를 생성할 때 Selector로 해당 라벨을 설정해 주면, 서비스는 라벨이 붙은 Pod들을 찾아서 관리 한다.
+- Pod를 생성할 때 특정 라벨을 붙일 수 있고, Service를 생성할 때 Selector로 해당 라벨을 설정해 주면, 서비스는 라벨이 붙은 Pod들을 찾아서 연결 한다.
+
+# ReplicaSet
+- Pod는 언제든 중단 될 수 있지만 Service가 Pod를 관리하지는 않는다.
+- ReplicaSet은 Pod가 문제가 생기면 새로운 Pod를 생성한다.
+- ReplicaSet은 Pod의 정보를 설정해야 함 (Template)
+
+# Deployment
+- ReplicaSet을 템플릿으로 가지고 있음.
+- 새로운 버전을 배포할 경우 Deployment는 새로운 버전의 ReplicaSet을 생성하고 순차적으로 이전 Pod를 죽이고 새로운 버전의 Pod를 생성한다. 
 
 # Ingress
+- 쿠버네티스 클러스터로 들어오는 요청을 URL별로 분산시켜주는 L7 로드밸런서
