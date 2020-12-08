@@ -102,3 +102,6 @@ kubectl get services --all-namespaces
 kubectl proxy
 ```
 > 쿠버네티스의 대시보드에 접속하려면 쿠버네티스 서버의 프록시를 실행 해야 함.
+
+접속
+ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
