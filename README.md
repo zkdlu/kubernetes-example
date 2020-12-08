@@ -96,3 +96,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.0/
 ```
 kubectl get services --all-namespaces
 ```
+
+프록시 실행
+```
+kubectl proxy
+```
+> 쿠버네티스의 대시보드에 접속하려면 쿠버네티스 서버의 프록시를 실행 해야 함.
