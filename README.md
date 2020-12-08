@@ -5,15 +5,15 @@
 - 도커 이미지를 가져와 실행 하거나, 실행중인 컨테이너에 장애가 생겼을 때 빠르게 되살려 장애를 방지 함.
 - 여러 서버를 쿠버네티스를 사용해 관리하면 서버 자원을 파악하고 적절하게 분배해서 실행 시킴.
 
-# Cluster
+## Cluster
 - 쿠버네티스에서 관리하는 가장 큰 단위를 클러스터라고 함.
 - 클러스터 내부에는 실제로 서비스를 담당하는 Worker Node와 이 Worker Node를 관리하는 Master Node가 있음.
 - Node에는 갯수 제한이 없어 추가적으로 늘릴 수 있음
 
-# Node
+## Node
 - 물리 서버/가상 서버를 의미함. 1개의 노드 = 1대의 머신
 
-# Pod
+## Pod
 - Docker Hub에 도커이미지를 업로드 하면, 도커이미지를 기반으로 컨테이너를 가지고 있는 Pod을 생성 할 수 있음.
 - Pod은 하나 이상의 컨테이너를 묶어 놓음
   > - Pod는 생성 될 때 가상의 유동 IP를 부여 받는다.
@@ -21,7 +21,7 @@
   > - Pod는 장애가 발생하면 중단 된다. 
   > - Image를 새로운 버전으로 업데이트 하려면 모든 Pod를 새로운 버전으로 업데이트 해야 함. Pod는 이미 만들어진 컨테이너로만 작동하기 떄문에 존재하는 Pod를 제거하고 새로운 버전의 이미지를 가진 Pod를 생성해야 함.
   
-  ## Pod의 특징
+  ### Pod의 특징
   - 컨테이너 어플맄이션을 배포하기 위한 기본 단위
   - 스토리지와 네트워크를 공유
   - 컨테이너에 대한 템플릿을 가지고 있음
@@ -35,20 +35,23 @@
   - 웹 서버와 같은 어플리케이션에 부가적인 기능을 필요로 할 때 복수의 컨테이너로 Pod를 구성 함. (Logging과 같은)
 
   
-# Service
+## Service
 - Pod의 IP는 유동적이기 때문에 Pod를 참조할 수 있는 IP를 정해두고 Pod의 IP가 변하면 자동으로 연동해줌
 - Service를 참조하면 Service가 관리하는 Pod에 연결 해준다.
 - Service는 고정적인 가상 IP를 가지고 있음.
 - Pod를 생성할 때 특정 라벨을 붙일 수 있고, Service를 생성할 때 Selector로 해당 라벨을 설정해 주면, 서비스는 라벨이 붙은 Pod들을 찾아서 연결 한다.
 
-# ReplicaSet
+## ReplicaSet
 - Pod는 언제든 중단 될 수 있지만 Service가 Pod를 관리하지는 않는다.
 - ReplicaSet은 Pod가 문제가 생기면 새로운 Pod를 생성한다.
 - ReplicaSet은 Pod의 정보를 설정해야 함 (Template)
 
-# Deployment
+## Deployment
 - ReplicaSet을 템플릿으로 가지고 있음.
 - 새로운 버전을 배포할 경우 Deployment는 새로운 버전의 ReplicaSet을 생성하고 순차적으로 이전 Pod를 죽이고 새로운 버전의 Pod를 생성한다. 
 
-# Ingress
+## Ingress
 - 쿠버네티스 클러스터로 들어오는 요청을 URL별로 분산시켜주는 L7 로드밸런서
+
+# Kubernetes 설치하기
+- Docker Desktop에서 설치 가능
