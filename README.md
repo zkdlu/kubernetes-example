@@ -54,4 +54,30 @@
 - 쿠버네티스 클러스터로 들어오는 요청을 URL별로 분산시켜주는 L7 로드밸런서
 
 # Kubernetes 설치하기
+- 도커 for Windows나 Mac을 설치할 때 함께 설치되고, 설정에서 활성화 시킬 수 있다.
 
+버전 확인
+
+```
+kubectl version --output yml
+```
+
+컨텍스트 확인 - 기본으로 docker-for-desktop으로 되어 있음
+
+```
+kubectl config get-contexts
+```
+
+노드 확인
+
+```
+kubectl get nodes
+```
+
+Pod 확인
+
+```
+kubectl get pods --all-namespaces
+```
+쿠버네티스에서 기본적으로 실행되는 pod들을 확인 할 수 있음. 
+> 처음에 뭔지 모르고 실행중인 컨테이너가 많길레 막 중지하고 삭제하는데 계속 새로 생겨나서 당황했다.
