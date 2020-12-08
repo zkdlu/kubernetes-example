@@ -130,4 +130,5 @@ kubectl get deployment {이름}
 Pod 제거
 ```
 kubectl delete deployment {이름}
+kubectl delete pods {이름}
 ```
