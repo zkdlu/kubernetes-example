@@ -48,6 +48,7 @@
 - Service를 참조하면 Service가 관리하는 Pod에 연결 해준다.
 - Service는 고정적인 가상 IP를 가지고 있음.
 - Pod를 생성할 때 특정 라벨을 붙일 수 있고, Service를 생성할 때 Selector로 해당 라벨을 설정해 주면, 서비스는 라벨이 붙은 Pod들을 찾아서 연결 한다.
+- ClusterIP, NodePort, LoadBalancer, ExternalName 4개 
 
 ## ReplicaSet
 - Pod는 언제든 중단 될 수 있지만 Service가 Pod를 관리하지는 않는다.
@@ -162,4 +163,10 @@ spec:
 2. 포드 개수 변경
 ```
 kubectl scale deploy nginx-deployment --replicas=2
+```
+
+
+3. 서비스 설정
+```
+kubectl expose deployment nginx-deployment --type=NodePort
 ```
