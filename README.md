@@ -54,4 +54,4 @@
 - 쿠버네티스 클러스터로 들어오는 요청을 URL별로 분산시켜주는 L7 로드밸런서
 
 # Kubernetes 설치하기
-- Docker Desktop에서 설치 가능
+
