@@ -168,5 +168,12 @@ kubectl scale deploy nginx-deployment --replicas=2
 
 3. 서비스 설정
 ```
-kubectl expose deployment nginx-deployment --type=NodePort
+kubectl expose deployment nginx-deployment --type=NodePort --name=nginx-service
 ```
+
+4. 서비스 확인
+```
+kubectl describe service nginx-service
+```
+
+> NodePort값으로 접속이 가능하다.
