@@ -87,7 +87,6 @@ kubectl get pods --all-namespaces
 
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
-
 ``` 
   - apply 명령어는 웹상의 파일을 바로 사용 할 수 있음.
   
