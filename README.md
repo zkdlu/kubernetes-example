@@ -3,6 +3,15 @@
 - 어플리케이션의 배포와 관리를 도와주는 툴
 - 도커 이미지를 가져와 실행 하거나, 실행중인 컨테이너에 장애가 생겼을 때 빠르게 되살려 장애를 방지 함.
 - 여러 서버를 쿠버네티스를 사용해 관리하면 서버 자원을 파악하고 적절하게 분배해서 실행 시킴.
+  - 특징
+    - Automatic binpacking : 리소스 사용과 제약 사항을 기준으로 자동으로 컨테이너를 스케줄
+    - Self-healing : 자동으로 문제가 발생한 노드의 컨테이너를 대체
+    - Horizontal scaling : CPU와 메모리같은 리소스 사용에 따라 자동으로 어플리케이션 확장, 사용자 정의 값으로 확장 가능
+    - Service discovery & Load balancing : Container에 고유한 IP부여, 여러개의 Container을 묶어 단일 service로 부여하는 경우 단일 DNS로 접근하도록 로드밸런싱 제공
+    - Automatic rollout & rollback : 서비스 중단 없이 어플리케이션의 새로운 버전 및 설정에 대한 롤아웃/롤백 가능
+    - Secret and configuration management : 어플리케이션의 secret과 configuration정보를 이미지와 독립적으로 구분하여 별도의 이미지 재생성 없이 관리
+    - Storage dorchestration : 로컬, 외부 및 저장소 솔루션을 위한 동일한 방법으로 컨테이너에 마운드 가능
+    - Batch execution : CI 같은 batch성 작업 지원, crontab 형식으로도 스케줄링 가능
 
 ## Cluster
 - 쿠버네티스에서 관리하는 가장 큰 단위를 클러스터라고 함.
