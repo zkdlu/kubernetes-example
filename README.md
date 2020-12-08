@@ -108,3 +108,18 @@ kubectl proxy
   > 토큰이 필요하다고 뜨는데 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}') 이걸로 토큰을 볼 수는 있다.
   
   > 근데 사용법이 이게 맞는지는 더 공부해야겠다.
+
+Pod 생성
+```
+kubectl create deployment --image={이미지} {이름}
+```
+
+Pod 확인
+```
+kubectl get deployment {이름}
+```
+
+Pod 제거
+```
+kubectl delete deployment {이름}
+```
