@@ -177,3 +177,7 @@ kubectl describe service nginx-service
 ```
 
 > NodePort값으로 접속이 가능하다.
+
+
+### 참고
+- https://arisu1000.tistory.com/category/Kubernetes
