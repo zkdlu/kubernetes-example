@@ -81,3 +81,18 @@ kubectl get pods --all-namespaces
 ```
   - 쿠버네티스에서 기본적으로 실행되는 pod들을 확인 할 수 있음. 
 > 처음에 뭔지 모르고 실행중인 컨테이너가 많길레 막 중지하고 삭제하는데 계속 새로 생겨나서 당황했다.
+
+
+쿠버네티스 대시보드 실행
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.0/src/deploy/recommended/kubernetes-dashboard.yaml
+
+``` 
+  - apply 명령어는 웹상의 파일을 바로 사용 할 수 있음.
+  
+서비스 목록 출력
+
+```
+kubectl get services --all-namespaces
+```
