@@ -105,3 +105,7 @@ kubectl proxy
 
 접속
  http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+ 
+  > 토큰이 필요하다고 뜨는데 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}') 이걸로 토큰을 볼 수는 있다.
+  
+  > 근데 사용법이 이게 맞는지는 더 공부해야겠다.
