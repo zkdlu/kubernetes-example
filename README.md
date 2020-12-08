@@ -132,3 +132,34 @@ Pod 제거
 kubectl delete deployment {이름}
 kubectl delete pods {이름}
 ```
+
+# 예제 따라해보기
+1. yaml 작성
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+```
+
+2. 포드 개수 변경
+```
+kubectl scale deploy nginx-deployment --replicas=2
+```
