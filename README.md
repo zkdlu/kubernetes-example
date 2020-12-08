@@ -86,7 +86,7 @@ kubectl get pods --all-namespaces
 쿠버네티스 대시보드 실행
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.0/src/deploy/recommended/kubernetes-dashboard.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
 
 ``` 
   - apply 명령어는 웹상의 파일을 바로 사용 할 수 있음.
