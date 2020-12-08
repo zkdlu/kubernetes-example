@@ -134,7 +134,7 @@ kubectl delete deployment {이름}
 kubectl delete pods {이름}
 ```
 
-# 예제 따라해보기
+# 예제 따라해보기 (nginx)
 1. yaml 작성
 ```yaml
 apiVersion: apps/v1
