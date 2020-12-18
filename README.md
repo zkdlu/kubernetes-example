@@ -13,6 +13,12 @@
     - Storage dorchestration : 로컬, 외부 및 저장소 솔루션을 위한 동일한 방법으로 컨테이너에 마운드 가능
     - Batch execution : CI 같은 batch성 작업 지원, crontab 형식으로도 스케줄링 가능
 
+## 도커와 비교
+- Docker
+![docker](./images/docker.png)
+- Kubernetes
+![kubernetes](./images/kubernetes.png)
+
 ## Cluster
 - 쿠버네티스에서 관리하는 가장 큰 단위를 클러스터라고 함.
 - 클러스터 내부에는 실제로 서비스를 담당하는 Worker Node와 이 Worker Node를 관리하는 Master Node가 있음.
