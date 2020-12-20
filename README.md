@@ -161,6 +161,23 @@ Pod 제거
 ```
 kubectl delete deployment {이름}
 kubectl delete pods {이름}
+kubectl delete -f {yaml 파일}
+```
+
+포트 포워딩
+```bash
+kubectl port-forward {pod이름} 8080:8080
+```
+
+로그
+```bash
+kubectl logs -f {pod}
+```
+
+컨테이너 내외부로 파일 복사
+```bash
+kubectl cp {pod}:/path/file.file ./file.file
+kubectl cp $HOME/file.file {pod}:/path/file.file
 ```
 
 # 예제 따라해보기 (nginx)
