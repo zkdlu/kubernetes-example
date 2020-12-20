@@ -24,6 +24,29 @@
 - 클러스터 내부에는 실제로 서비스를 담당하는 Worker Node와 이 Worker Node를 관리하는 Master Node가 있음.
 - Node에는 갯수 제한이 없어 추가적으로 늘릴 수 있음
 
+  ### Cluster 구성요소
+  1. 쿠버네티스 프록시
+  
+  쿠버네티스 클러스터 내 서비스의 로드밸런싱을 위해 네트워크 트래픽을 라우팅하여야 하는데, 클러스터의 모든 노드에 프록시가 있어야 가능하다. 쿠버네티스는 DaemonSet이라는 API 객체를 가지고 있고 이 객체는 클러스터에서 프록시 기능을 수행한다.
+  ```bash
+  kubectl get daemonSets --namespace=kube-system
+  ```
+  
+  2. 쿠버네티스 DNS
+  
+  쿠버네티스는 클러스터에 정의된 서비스의 이름 지정과 검색을 제공하는 DNS 서버를 실행함.
+  ```bash
+  kubectl get deployments --namespace=kube-system
+  ```
+  DNS 서버에 대한 로드밸런싱을 수행하는 서비스
+  ```bash
+  kubectl get services --namespace=kube-system
+  ```
+  
+  3. 쿠버네티스 UI
+  
+  UI는 단일 복제본으로 실행되며, 신뢰성과 업그레이드를 위해 쿠버네티스 Deployment로 관리 
+
 ## Node
 - 물리 서버/가상 서버를 의미함. 1개의 노드 = 1대의 머신
 
