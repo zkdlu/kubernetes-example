@@ -79,6 +79,21 @@
 - Pod를 생성할 때 특정 라벨을 붙일 수 있고, Service를 생성할 때 Selector로 해당 라벨을 설정해 주면, 서비스는 라벨이 붙은 Pod들을 찾아서 연결 한다.
 - ClusterIP, NodePort, LoadBalancer, ExternalName 4개 
 
+  ### ClusterIP
+  기본 서비스. 클러스터 내의 다른 앱이 접근 할 수 있게 함. 외부 접근 불가 (Kubernetes Proxy 통해 접근 가능)
+  > 1. 서비스를 디버깅하거나, 노트북/PC에서 직접 접근할 때
+  > 2. 내부 대시보드 표시 등 내부 트래픽을 허용할 때
+  
+  ### NodePort
+  외부 트래픽을 직접 보낼 수 있는 기본 방법. 모든 Node에 특정 포트를 열어두고,  이 포트로 보내지는 모든 트래픽을 서비스로 포워딩한다.
+  > 1. 포트당 한 서비스만 할당
+  > 2. 30000-32767 사이의 포트만 사용 가능
+  > 3. Node의 IP가 바뀌면 반영해야 함
+  
+  ### LoadBalancer
+  로드밸런싱을 이용한 서비스
+  > 1. 지정한 포트의 모든 트래픽은 서비스로 포워딩 됨. (필터링, 라우팅 없음)
+
 ## ReplicaSet
 - Pod는 언제든 중단 될 수 있지만 Service가 Pod를 관리하지는 않는다.
 - ReplicaSet은 Pod가 문제가 생기면 새로운 Pod를 생성한다.
@@ -90,6 +105,7 @@
 
 ## Ingress
 - 쿠버네티스 클러스터로 들어오는 요청을 URL별로 분산시켜주는 L7 로드밸런서
+> 요청이 Ingress로 들어오면 Ingress는 url path에 맞게 여러 서비스로 요청을 분산한다.
 
 # Kubernetes 설치하기
 - 도커 for Windows나 Mac을 설치할 때 함께 설치되고, 설정에서 활성화 시킬 수 있다.
