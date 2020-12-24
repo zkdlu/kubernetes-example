@@ -108,29 +108,41 @@
 > 요청이 Ingress로 들어오면 Ingress는 url path에 맞게 여러 서비스로 요청을 분산한다.
 
 # Kubernetes 설치하기
-- 도커 for Windows나 Mac을 설치할 때 함께 설치되고, 설정에서 활성화 시킬 수 있다.
+Docker Desktop 설치하면 같이 깔림
+> 설치 목록
+> - kubeadm : kubernetes 클러스터를 구축하기 위해 사용하는 툴
+> - kubelet : 클러스터의 모든 머신에서 실행되며 Pod 및 컨테이너 시작 등의 작업을 수행하는 구성 요소
+> - kubectl : 클러스터와 통신하는 커맨드라인 인터페이스 유틸
+
+1. kubectl 설치
+```bash
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
+chmod +x ./kubectl 
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+2.  Kubelet, Kubeadm 설치
+```bash
+...
+```
+> AWS 프리티어로는 설치 사양이 부족하네..?
 
 버전 확인
-
-```
+```bash
 kubectl version --output yml
 ```
 
 컨텍스트 확인 - 기본으로 docker-for-desktop으로 되어 있음
-
-```
+```bash
 kubectl config get-contexts
 ```
 
 노드 확인
-
-```
+```bash
 kubectl get nodes
 ```
 
 Pod 확인
-
-```
+```bash
 kubectl get pods --all-namespaces
 ```
   - 쿠버네티스에서 기본적으로 실행되는 pod들을 확인 할 수 있음. 
@@ -138,20 +150,18 @@ kubectl get pods --all-namespaces
 
 
 쿠버네티스 대시보드 실행
-
-```
+```bash
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
 ``` 
   - apply 명령어는 웹상의 파일을 바로 사용 할 수 있음.
   
 서비스 목록 출력
-
-```
+```bash
 kubectl get services --all-namespaces
 ```
 
 프록시 실행
-```
+```bash
 kubectl proxy
 ```
 > 쿠버네티스의 대시보드에 접속하려면 쿠버네티스 서버의 프록시를 실행 해야 함.
@@ -164,17 +174,17 @@ kubectl proxy
   > 근데 사용법이 이게 맞는지는 더 공부해야겠다.
 
 Pod 생성
-```
+```bash
 kubectl create deployment --image={이미지} {이름}
 ```
 
 Pod 확인
-```
+```bash
 kubectl get deployment {이름}
 ```
 
 Pod 제거
-```
+```bash
 kubectl delete deployment {이름}
 kubectl delete pods {이름}
 kubectl delete -f {yaml 파일}
