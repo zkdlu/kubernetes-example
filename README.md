@@ -114,6 +114,16 @@ Docker Desktop 설치하면 같이 깔림
 > - kubelet : 클러스터의 모든 머신에서 실행되며 Pod 및 컨테이너 시작 등의 작업을 수행하는 구성 요소
 > - kubectl : 클러스터와 통신하는 커맨드라인 인터페이스 유틸
 
+```bash
+$ curl -sS https://get.k8s.io | bash
+```
+> 쿠버네티스 최신버전 설치? 
+
+1.5버전 이전 버전에서는 kube-up.sh스크립트를 자동으로 호출해 클러스터 빌딩을 시작 함. 1.5에서는 클러스터를 올리려면 kube-up.sh를 직접 호출해야 한다.
+```bash
+$ kubernetes/cluster/kube-up.sh
+```
+
 1. kubectl 설치
 ```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl 
